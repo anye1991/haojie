@@ -1,6 +1,25 @@
-torch==2.0.1
-numpy==1.24.3
-pandas==2.0.3
-scikit-learn==1.3.0
-requests==2.31.0
-argparse==1.4.0
+# 核心依赖（AI 模型 + 数据处理）
+torch>=2.2.0          # 支持 Python 3.12，AI 漏洞特征推理核心
+numpy>=1.26.0         # 支持 Python 3.12，数据特征提取（解决 pkgutil 兼容问题）
+
+# Web 渗透基础依赖
+requests>=2.31.0      # HTTP 请求（Web 漏洞探测、Payload 发送）
+beautifulsoup4>=4.12.2# HTML 解析（敏感信息提取、页面结构分析）
+lxml>=4.9.3           # 高效 HTML/XML 解析（配合 bs4 使用）
+urllib3>=2.0.7        # HTTP 连接池（避免 requests 依赖冲突）
+
+# 漏洞利用工具依赖
+sqlalchemy>=2.0.23    # 数据库交互（SQL 注入后数据存储）
+python-nmap>=0.7.1    # 端口扫描（信息收集阶段）
+subfinder>=0.1.0      # 子域名枚举（信息收集，需配合系统 subfinder 工具）
+scapy>=2.5.0          # 网络数据包分析（基础漏洞探测）
+
+# 辅助功能依赖
+colorama>=0.4.6       # 终端彩色输出（日志可视化）
+pyyaml>=6.0.1         # 配置文件解析（框架参数配置）
+markdown>=3.5.1       # Markdown 渲染（PoC 报告生成）
+pillow>=10.1.0        # 图片处理（漏洞截图压缩，报告附件用）
+
+# 系统交互依赖（自动提权、工具调用）
+paramiko>=3.3.1       # SSH 连接（Linux 提权后远程操作）
+psutil>=5.9.6         # 系统资源监控（提权后权限验证）
