@@ -4,7 +4,7 @@ numpy>=1.26.0         # 支持 Python 3.12，数据特征提取（解决 pkgutil
 
 # Web 渗透基础依赖
 requests>=2.31.0      # HTTP 请求（Web 漏洞探测、Payload 发送）
-beautifulsoup4>=4.12.2# HTML 解析（敏感信息提取、页面结构分析）
+beautifulsoup4>=4.12.2 # HTML 解析（敏感信息提取、页面结构分析）
 lxml>=4.9.3           # 高效 HTML/XML 解析（配合 bs4 使用）
 urllib3>=2.0.7        # HTTP 连接池（避免 requests 依赖冲突）
 
